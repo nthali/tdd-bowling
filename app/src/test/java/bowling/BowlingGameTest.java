@@ -10,18 +10,23 @@ public class BowlingGameTest {
 
     @BeforeEach
     public void setUp() {
-        game = new BowlingGameI3();
+        game = new BowlingGameI1();
     }
 
     @Test
-    public void rollASeven() {
-        game.roll(3);
-        game.roll(4);
+    public void rollAZero() {
+        game.roll(0);
+        assertEquals(0, game.score());
+    }
+
+    @Test
+    public void rollASingleSeven() {
+        game.roll(7);
         assertEquals(7, game.score());
     }
 
     @Test
-    public void rollANine() {
+    public void rollANineInAFrame() {
         game.roll(3);
         game.roll(6);
         assertEquals(9, game.score());
