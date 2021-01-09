@@ -10,7 +10,7 @@ public class BowlingGameTest {
 
     @BeforeEach
     public void setUp() {
-        game = new BowlingGameI2();
+        game = new BowlingGameI0();
     }
 
     @Test
