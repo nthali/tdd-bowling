@@ -10,7 +10,7 @@ public class BowlingGameTest {
 
     @BeforeEach
     public void setUp() {
-        game = new BowlingGameI0();
+        game = new BowlingGameI3();
     }
 
     @Test
@@ -60,6 +60,17 @@ public class BowlingGameTest {
         game.roll(3);
         game.roll(3);
         assertEquals(45, game.score());
+    }
+
+    @Test
+    public void rollTwoSeparateStrikes() {
+        game.roll(10); // 10 + 3 + 3 = 16
+        game.roll(3);
+        game.roll(3); // 3 + 3 = 6
+        game.roll(10); // 10 + 5 + 3 = 18
+        game.roll(5);
+        game.roll(3); // 5 + 3 = 8
+        assertEquals(48, game.score());
     }
 
     @Test
